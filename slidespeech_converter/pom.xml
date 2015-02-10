@@ -133,6 +133,7 @@
 			<groupId>org.libreoffice</groupId>
 			<artifactId>unoil</artifactId>
 			<version>${version.libreoffice}</version>
+			<systemPath>local_maven_repository/unoil-3.5.0.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -330,7 +331,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 
