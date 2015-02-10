@@ -129,12 +129,6 @@
 		</dependency>
  	-->
 
-	<dependency>
-			<groupId>org.libreoffice</groupId>
-			<artifactId>unoil</artifactId>
-			<version>${version.libreoffice}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.libreoffice</groupId>
 			<artifactId>ridl</artifactId>
