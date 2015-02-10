@@ -1,16 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.slidespeech.server</groupId>
 	<artifactId>converter</artifactId>
 	<version>0.9.9.3</version>
 	<packaging>war</packaging>
-  
-<properties>
+
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.arquillian>1.1.6.Final</version.arquillian>
 		<version.libreoffice>3.5.0</version.libreoffice>
 		<version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
 	</properties>
+
+
+
 
 	<repositories>
 		<repository>
@@ -51,6 +59,8 @@
 	</dependencyManagement>
 
 	<dependencies>
+
+
 
 
 
@@ -120,14 +130,9 @@
 			<version>1.6.3</version>
 		</dependency>
 
-		<!-- Libreoffice access
-		<dependency>
-			<groupId>com.artofsolving</groupId>
-			<artifactId>jodconverter</artifactId>
-			<version>2.2.1</version>
-			<scope>test</scope>
-		</dependency>
- 	-->
+		<!-- Libreoffice access <dependency> <groupId>com.artofsolving</groupId> 
+			<artifactId>jodconverter</artifactId> <version>2.2.1</version> <scope>test</scope> 
+			</dependency> -->
 
 		<dependency>
 			<groupId>org.libreoffice</groupId>
@@ -267,7 +272,7 @@
 		</dependency>
 
 
-	<dependency>
+		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
 			<version>4.2.5</version>
@@ -324,6 +329,28 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.1.1.Final</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<!-- Only remote server needs -->
+						<configuration>
+							<hostname>slidespeech.squeeze</hostname>
+							<port>9990</port>
+							<username>slidespeech</username>
+							<password>alabama</password>
+						</configuration>
+
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -358,9 +385,5 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
-
 	</profiles>
-
-  
-  
 </project>
