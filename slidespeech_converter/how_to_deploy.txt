@@ -1,0 +1,13 @@
+#on vm - use maven
+To package mvn package 
+To deploy on vm
+run as maven build - mvn jboss-as:deploy
+
+#on slidespeech.cloudapp.net
+package war with maven
+scp war to to slidespeech.cloudapp.net
+ssh on machine and copy web directory to 
+/opt/jboss-as-7.1.1.Final/standalone/deployments
+(remove old war before if required)
+touch "war-name".dodeploy in deployment directory
+jboss deploys converter
